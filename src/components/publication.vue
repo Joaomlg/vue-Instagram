@@ -1,5 +1,5 @@
 <template>
-  <v-card width="500px" class="mb-3">
+  <v-card width="600px" class="mb-3">
     <v-card-title class="py-0 px-0">
       <v-container>
         <v-row align="center">
@@ -19,9 +19,9 @@
     <v-card-text class="py-0 px-0">
       <v-container>
         <v-row class="px-3 pb-1">
-          <v-icon class="mr-2" color="icons">mdi-heart-outline</v-icon>
-          <v-icon class="mr-2" color="icons">mdi-message-outline</v-icon>
-          <v-icon class="mr-2" color="icons">mdi-send-outline</v-icon>
+          <v-icon class="mr-4" color="icons">mdi-heart-outline</v-icon>
+          <v-icon class="mr-4" color="icons">mdi-message-outline</v-icon>
+          <v-icon class="mr-4" color="icons">mdi-send-outline</v-icon>
           <v-spacer></v-spacer>
           <v-icon color="icons">mdi-bookmark-outline</v-icon>
         </v-row>
