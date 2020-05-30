@@ -4,7 +4,11 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify';
 
+import utils from './mixin/utils'
+
 Vue.config.productionTip = false
+
+Vue.mixin(utils);
 
 new Vue({
   router,
