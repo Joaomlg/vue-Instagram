@@ -25,7 +25,7 @@
           <v-spacer></v-spacer>
           <v-icon color="icons">mdi-bookmark-outline</v-icon>
         </v-row>
-        <v-row class="px-3">
+        <v-row class="px-3 py-1">
           <span class="subtitle-2 black--text mr-3">{{ user }}</span>
           <span class="caption black--text text-wrap">{{ description }}</span>
         </v-row>

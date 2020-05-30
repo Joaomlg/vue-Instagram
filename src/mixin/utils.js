@@ -1,7 +1,7 @@
 const utils = {
   computed: {
     $isMobile() {
-      if(window.innerWidth < 640)
+      if(window.innerWidth < 600)
         return true;
       return false;
     },
