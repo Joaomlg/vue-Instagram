@@ -42,7 +42,7 @@
     <v-footer absolute v-if="$isMobile" height="56px" color="appBarBackground" class="d-flex justify-space-around">
       <v-btn icon class="mr-1"><v-icon color="icons" size="32px">mdi-home</v-icon></v-btn>
       <v-btn icon class="mr-1"><v-icon color="icons" size="32px">mdi-magnify</v-icon></v-btn>
-      <v-btn icon class="mr-1"><v-icon color="icons" size="32px">mdi-plus-box-outline</v-icon></v-btn>
+      <v-btn icon class="mr-1"><v-icon color="icons" size="32px">mdi-plus-circle-outline</v-icon></v-btn>
       <v-btn icon class="mr-3"><v-icon color="icons" size="32px">mdi-heart-outline</v-icon></v-btn>
       <v-avatar color="grey" size="28px">
         <v-img src="https://avatars1.githubusercontent.com/u/40251227?v=4"></v-img>

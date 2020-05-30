@@ -3,7 +3,6 @@
     <publication v-for="(item, i) in items" :key="i" 
       class="mx-auto"
       :user="item.author"
-      
       :description="item.url"
       :url="item.download_url"
     ></publication>
