@@ -19,9 +19,9 @@
       <v-spacer></v-spacer>
       <v-text-field rounded filled single-line dense prepend-inner-icon="mdi-magnify" label="Pesquisar" clearable class="search-field"></v-text-field>
       <v-spacer></v-spacer>
-      <v-icon class="mr-5" color="icons" size="32px">mdi-home</v-icon>
-      <v-icon class="mr-5" color="icons" size="32px">mdi-send-outline</v-icon>
-      <v-icon class="mr-5" color="icons" size="32px">mdi-compass-outline</v-icon>
+      <v-icon class="mr-5" color="icons" size="32px" @click="$router.push('/')">mdi-home</v-icon>
+      <v-icon class="mr-5" color="icons" size="32px" >mdi-send-outline</v-icon>
+      <v-icon class="mr-5" color="icons" size="32px" @click="$router.push('/explore')">mdi-compass-outline</v-icon>
       <v-icon class="mr-5" color="icons" size="32px">mdi-heart-outline</v-icon>
       <v-avatar color="grey" size="28px">
         <v-img src="https://avatars1.githubusercontent.com/u/40251227?v=4"></v-img>
@@ -40,8 +40,8 @@
       </v-sheet>
     </v-content>
     <v-footer absolute v-if="$isMobile" height="56px" color="appBarBackground" class="d-flex justify-space-around">
-      <v-icon color="icons" size="32px">mdi-home</v-icon>
-      <v-icon color="icons" size="32px">mdi-magnify</v-icon>
+      <v-icon color="icons" size="32px" @click="$router.push('/')">mdi-home</v-icon>
+      <v-icon color="icons" size="32px" @click="$router.push('/explore')">mdi-magnify</v-icon>
       <v-icon color="icons" size="32px">mdi-plus-circle-outline</v-icon>
       <v-icon color="icons" size="32px">mdi-heart-outline</v-icon>
       <v-avatar color="grey" size="28px">
