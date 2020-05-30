@@ -1,60 +1,60 @@
+<style>
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
+  .search-field > .v-input__control > .v-input__slot {
+    margin: 0 !important;
+  }
+
+  .search-field > .v-input__control > .v-text-field__details {
+    display: none !important;
+  }
+</style>
+
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
+    <v-app-bar absolute v-if="!$isMobile" app flat elevation="1" color="appBarBackground" :dark="$dark" scroll-target="#scroll">
+      <v-icon color="icons" size="32px">mdi-instagram</v-icon>
       <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <v-text-field rounded filled single-line dense prepend-inner-icon="mdi-magnify" label="Pesquisar" clearable class="search-field"></v-text-field>
+      <v-spacer></v-spacer>
+      <v-btn icon class="mr-1"><v-icon color="icons" size="32px">mdi-home</v-icon></v-btn>
+      <v-btn icon class="mr-1"><v-icon color="icons" size="32px">mdi-send-outline</v-icon></v-btn>
+      <v-btn icon class="mr-1"><v-icon color="icons" size="32px">mdi-compass-outline</v-icon></v-btn>
+      <v-btn icon class="mr-3"><v-icon color="icons" size="32px">mdi-heart-outline</v-icon></v-btn>
+      <v-avatar color="grey" size="28px">
+        <v-img src="https://avatars1.githubusercontent.com/u/40251227?v=4"></v-img>
+      </v-avatar>
     </v-app-bar>
-
+    <v-app-bar v-else app flat elevation="1" color="appBarBackground" :dark="$dark">
+      <v-icon color="icons" size="32px">mdi-instagram</v-icon>
+      <v-spacer></v-spacer>
+      <v-toolbar-title style="font-family: 'Chelsea Market', cursive;">Vue</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn icon><v-icon color="icons" size="32px">mdi-send-outline</v-icon></v-btn>
+    </v-app-bar>
     <v-content>
-      <HelloWorld/>
+      <v-sheet id="scroll" class="overflow-y-auto px-3 py-5" color="appBackground" :height="$isMobile ? 'calc(100vh - 56px - 56px)' : 'calc(100vh - 56px)'">
+        <router-view></router-view>
+      </v-sheet>
     </v-content>
+    <v-footer absolute v-if="$isMobile" height="56px" color="appBarBackground" class="d-flex justify-space-around">
+      <v-btn icon class="mr-1"><v-icon color="icons" size="32px">mdi-home</v-icon></v-btn>
+      <v-btn icon class="mr-1"><v-icon color="icons" size="32px">mdi-magnify</v-icon></v-btn>
+      <v-btn icon class="mr-1"><v-icon color="icons" size="32px">mdi-plus-box-outline</v-icon></v-btn>
+      <v-btn icon class="mr-3"><v-icon color="icons" size="32px">mdi-heart-outline</v-icon></v-btn>
+      <v-avatar color="grey" size="28px">
+        <v-img src="https://avatars1.githubusercontent.com/u/40251227?v=4"></v-img>
+      </v-avatar>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
-  name: 'App',
-
-  components: {
-    HelloWorld,
-  },
-
   data: () => ({
     //
-  }),
+  })
 };
 </script>
