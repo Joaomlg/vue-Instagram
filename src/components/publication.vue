@@ -27,7 +27,7 @@
         </v-row>
         <v-row class="px-3 py-1">
           <span class="subtitle-2 black--text mr-3">{{ user }}</span>
-          <span class="caption black--text text-wrap">{{ description }}</span>
+          <a :href="description" target="_blank" class="caption black--text text-wrap">{{ description }}</a>
         </v-row>
         <v-divider class="mt-3 mb-1"></v-divider>
         <v-row align="center" class="px-3">
