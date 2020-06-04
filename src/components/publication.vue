@@ -15,15 +15,15 @@
         </v-row>
       </v-container>
     </v-card-title>
-    <v-img max-height="300px" :src="url"></v-img>
+    <v-img max-height="300px" :src="url" v-on:dblclick="like"></v-img>
     <v-card-text class="py-0 px-0">
       <v-container>
         <v-row class="px-3 pb-1">
-          <v-icon class="mr-4" color="icons">mdi-heart-outline</v-icon>
-          <v-icon class="mr-4" color="icons">mdi-message-outline</v-icon>
-          <v-icon class="mr-4" color="icons">mdi-send-outline</v-icon>
+          <v-icon @click="like" class="mr-4" :color="liked ? 'red' : 'icons'" v-text="liked ? 'mdi-heart': 'mdi-heart-outline'"></v-icon>
+          <v-icon @click="comment" class="mr-4" color="icons">mdi-message-outline</v-icon>
+          <v-icon @click="send" class="mr-4" color="icons">mdi-send-outline</v-icon>
           <v-spacer></v-spacer>
-          <v-icon color="icons">mdi-bookmark-outline</v-icon>
+          <v-icon @click="save" color="icons" v-text="saved ? 'mdi-bookmark' : 'mdi-bookmark-outline'"></v-icon>
         </v-row>
         <v-row class="px-3 py-1">
           <span class="subtitle-2 black--text mr-3">{{ user }}</span>
@@ -31,7 +31,7 @@
         </v-row>
         <v-divider class="mt-3 mb-1"></v-divider>
         <v-row align="center" class="px-3">
-          <v-text-field hide-details solo flat dense label="Adicionar um comentário...">
+          <v-text-field ref="commentField" hide-details solo flat dense clearable label="Adicionar um comentário..." color="grey darken-3">
             <template #append>
               <v-btn text class="px-1 ml-1" style="margin-right: -12px">Publicar</v-btn>
             </template>
@@ -45,9 +45,27 @@
 <script>
 export default {
   props: ['user', 'local', 'description', 'url'],
+  data: () => ({
+    liked: false,
+    saved: false
+  }),
   computed: {
     avatar_img() {
       return `https://avatars.dicebear.com/api/bottts/${this.$props.user}.svg`
+    }
+  },
+  methods: {
+    like() {
+      this.liked = !this.liked;
+    },
+    comment() {
+      this.$refs.commentField.focus();
+    },
+    send() {
+
+    },
+    save() {
+      this.saved = !this.saved;
     }
   }
 }
