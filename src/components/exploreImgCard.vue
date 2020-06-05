@@ -5,7 +5,7 @@
     position: absolute;
     bottom: 0;
     background: black;
-    opacity: 0.5;
+    opacity: 0.6;
     color: white;
     display: flex;
     align-items: center;
