@@ -1,3 +1,16 @@
+<style scoped>
+  .card-img-placeholder {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    opacity: .6;
+    color: white;
+  }
+</style>
+
 <template>
   <v-card width="600px" class="mb-3">
     <v-card-title class="py-0 px-0">
@@ -15,7 +28,13 @@
         </v-row>
       </v-container>
     </v-card-title>
-    <v-img max-height="300px" :src="url" v-on:dblclick="like"></v-img>
+    <v-img max-height="300px" :src="url" v-on:dblclick="like">
+      <template #placeholder>
+        <div class="card-img-placeholder">
+          <v-progress-circular indeterminate></v-progress-circular>
+        </div>
+      </template>
+    </v-img>
     <v-card-text class="py-0 px-0">
       <v-container>
         <v-row class="px-3 pb-1">
