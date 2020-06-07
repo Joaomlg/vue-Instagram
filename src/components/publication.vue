@@ -24,7 +24,7 @@
             <span class="d-block caption black--text">{{ local }}</span>
           </v-col>
           <v-spacer></v-spacer>
-          <v-btn icon class="mr-3"><v-icon color="icons" v-text="$isMobile ? 'mdi-dots-vertical' : 'mdi-dots-horizontal'"></v-icon></v-btn>
+          <v-btn icon class="mr-3" @click="dialog = true"><v-icon color="icons" v-text="$isMobile ? 'mdi-dots-vertical' : 'mdi-dots-horizontal'"></v-icon></v-btn>
         </v-row>
       </v-container>
     </v-card-title>
@@ -62,6 +62,23 @@
         </v-row>
       </v-container>
     </v-card-text>
+    <v-dialog v-model="dialog" max-width="300px">
+      <v-list>
+        <v-list-item-group>
+          <v-list-item @click="download"><v-list-item-content>
+            <v-list-item-title class="black--text font-weight-bold text-center">Donwload</v-list-item-title>
+          </v-list-item-content></v-list-item>
+          <v-divider></v-divider>
+          <v-list-item @click="selfDelete"><v-list-item-content>
+            <v-list-item-title class="red--text font-weight-bold text-center">Excluir</v-list-item-title>
+          </v-list-item-content></v-list-item>
+          <v-divider></v-divider>
+          <v-list-item @click="dialog = false"><v-list-item-content>
+            <v-list-item-title class="black--text text-center">Cancelar</v-list-item-title>
+          </v-list-item-content></v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-dialog>
   </v-card>
 </template>
 
@@ -77,7 +94,8 @@ export default {
       comment: '',
       button_loading: false
     },
-    comments: []
+    comments: [],
+    dialog: false
   }),
   computed: {
     avatar_img() {
@@ -101,6 +119,12 @@ export default {
     },
     save() {
       this.saved = !this.saved;
+    },
+    download() {
+      
+    },
+    selfDelete() {
+
     }
   }
 }
