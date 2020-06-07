@@ -39,7 +39,7 @@
       <v-container>
         <v-row class="px-3 pb-1">
           <v-icon @click="like" class="mr-4" :color="liked ? 'red' : 'icons'" v-text="liked ? 'mdi-heart': 'mdi-heart-outline'"></v-icon>
-          <v-icon @click="comment" class="mr-4" color="icons">mdi-message-outline</v-icon>
+          <v-icon @click="() => {this.$refs.commentField.focus();}" class="mr-4" color="icons">mdi-message-outline</v-icon>
           <v-icon @click="send" class="mr-4" color="icons">mdi-send-outline</v-icon>
           <v-spacer></v-spacer>
           <v-icon @click="save" color="icons" v-text="saved ? 'mdi-bookmark' : 'mdi-bookmark-outline'"></v-icon>
@@ -48,11 +48,15 @@
           <span class="subtitle-2 black--text mr-3">{{ user }}</span>
           <a :href="description" target="_blank" class="caption black--text text-wrap">{{ description }}</a>
         </v-row>
+        <v-row class="px-3 py-1" v-for="(item, i) in comments" :key="i">
+          <span class="subtitle-2 black--text mr-3">You</span>
+          <span class="caption black--text text-wrap">{{ item }}</span>
+        </v-row>
         <v-divider class="mt-3 mb-1"></v-divider>
         <v-row align="center" class="px-3">
-          <v-text-field ref="commentField" hide-details solo flat dense clearable label="Adicionar um comentário..." color="grey darken-3">
+          <v-text-field ref="commentField" v-model="forms.comment" hide-details solo flat dense clearable label="Adicionar um comentário..." color="grey darken-3">
             <template #append>
-              <v-btn text class="px-1 ml-1" style="margin-right: -12px">Publicar</v-btn>
+              <v-btn text class="px-1 ml-1" style="margin-right: -12px" @click="comment" :loading="forms.button_loading">Publicar</v-btn>
             </template>
           </v-text-field>
         </v-row>
@@ -62,11 +66,18 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   props: ['user', 'local', 'description', 'url'],
   data: () => ({
     liked: false,
-    saved: false
+    saved: false,
+    forms: {
+      comment: '',
+      button_loading: false
+    },
+    comments: []
   }),
   computed: {
     avatar_img() {
@@ -78,7 +89,12 @@ export default {
       this.liked = !this.liked;
     },
     comment() {
-      this.$refs.commentField.focus();
+      this.forms.button_loading = true;
+      setTimeout(() => {
+        this.comments.push(this.forms.comment);
+        this.forms.comment = '';
+        this.forms.button_loading = false;
+      }, 500);
     },
     send() {
 
