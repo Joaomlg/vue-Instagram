@@ -44,11 +44,11 @@
           <v-spacer></v-spacer>
           <v-icon @click="save" color="icons" v-text="saved ? 'mdi-bookmark' : 'mdi-bookmark-outline'"></v-icon>
         </v-row>
-        <v-row class="px-3 py-1">
+        <v-row align="center" class="px-3 py-1">
           <span class="subtitle-2 black--text mr-3">{{ user }}</span>
           <a :href="description" target="_blank" class="caption black--text text-wrap">{{ description }}</a>
         </v-row>
-        <v-row class="px-3 py-1" v-for="(item, i) in comments" :key="i">
+        <v-row align="center" class="px-3 py-1" v-for="(item, i) in comments" :key="i">
           <span class="subtitle-2 black--text mr-3">You</span>
           <span class="caption black--text text-wrap">{{ item }}</span>
         </v-row>
