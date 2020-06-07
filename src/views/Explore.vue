@@ -35,7 +35,7 @@ export default {
       }
     }
   },
-  created() {
+  mounted() {
     this.img_per_page = Math.floor((window.innerHeight - (this.$isMobile ? 112 : 56)) / (window.innerWidth * 0.225) + 1) * 4;
     this.loadPage();
   }
