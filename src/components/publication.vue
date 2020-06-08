@@ -124,7 +124,8 @@ export default {
       
     },
     selfDelete() {
-
+      this.$emit('delete');
+      this.dialog = false;
     }
   }
 }

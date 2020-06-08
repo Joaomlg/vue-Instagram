@@ -5,6 +5,7 @@
       :user="item.author"
       :description="item.url"
       :url="item.download_url"
+      @delete="items.splice(i, 1)"
     ></publication>
   </div>
 </template>
