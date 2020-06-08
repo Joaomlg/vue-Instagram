@@ -10,11 +10,15 @@
   .search-field > .v-input__control > .v-text-field__details {
     display: none !important;
   }
+
+  .pointer:hover {
+    cursor: pointer;
+  }
 </style>
 
 <template>
   <v-app>
-    <v-app-bar absolute v-if="!$isMobile" app flat elevation="1" color="appBarBackground" :dark="$dark" scroll-target="#scroll">
+    <v-app-bar absolute v-if="!$isMobile" app flat elevation="1" color="appBarBackground" :dark="$dark" scroll-target="#scroll" height="56px">
       <v-icon color="icons" size="32px">mdi-instagram</v-icon>
       <v-spacer></v-spacer>
       <v-text-field rounded filled single-line dense prepend-inner-icon="mdi-magnify" label="Pesquisar" clearable class="search-field"></v-text-field>
@@ -23,7 +27,7 @@
       <v-icon class="mr-5" color="icons" size="32px" >mdi-send-outline</v-icon>
       <v-icon class="mr-5" color="icons" size="32px" @click="goTo('/explore')">{{ filledOrOutlined('/explore', 'mdi-compass') }}</v-icon>
       <v-icon class="mr-5" color="icons" size="32px">mdi-heart-outline</v-icon>
-      <v-avatar color="grey" size="28px">
+      <v-avatar class="pointer" color="grey" size="28px" @click="goTo('/profile')">
         <v-img src="https://avatars1.githubusercontent.com/u/40251227?v=4"></v-img>
       </v-avatar>
     </v-app-bar>
@@ -35,7 +39,7 @@
       <v-icon color="icons" size="32px">mdi-send-outline</v-icon>
     </v-app-bar>
     <v-content>
-      <v-sheet id="scroll" class="overflow-y-auto px-3 py-5" color="appBackground" :height="$isMobile ? 'calc(100vh - 56px - 56px)' : 'calc(100vh - 56px)'">
+      <v-sheet id="scroll" class="overflow-y-auto px-3 py-3" color="appBackground" :height="$isMobile ? 'calc(100vh - 56px - 56px)' : 'calc(100vh - 56px)'">
         <router-view></router-view>
       </v-sheet>
     </v-content>
