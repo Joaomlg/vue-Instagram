@@ -1,4 +1,4 @@
-# instagram
+# vuestragram
 
 ## Project setup
 ```
