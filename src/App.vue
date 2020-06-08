@@ -48,7 +48,7 @@
       <v-icon color="icons" size="32px" @click="goTo('/explore')">{{ filledOrOutlined('/explore', 'mdi-compass') }}</v-icon>
       <v-icon color="icons" size="32px">mdi-plus-circle-outline</v-icon>
       <v-icon color="icons" size="32px">mdi-heart-outline</v-icon>
-      <v-avatar color="grey" size="28px">
+      <v-avatar color="grey" size="28px" class="pointer" @click="goTo('/profile')">
         <v-img src="https://avatars1.githubusercontent.com/u/40251227?v=4"></v-img>
       </v-avatar>
     </v-footer>
