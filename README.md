@@ -1,5 +1,7 @@
 # VUEstragram
 
+##### Just a little project to study Vue using Vuetify and Vue-Router
+
 <p align="center">
   <img src="./src/assets/Home.gif" />
 </p>
