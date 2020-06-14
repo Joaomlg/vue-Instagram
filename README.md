@@ -1,6 +1,10 @@
 # VUEstragram
 
-![Alt Text](./src/assets/Home.gif)
+<p align="center">
+  <img src="./src/assets/Home.gif" />
+</p>
+
+<!-- ![Alt Text](./src/assets/Home.gif) -->
 
 ## Project setup
 ```
