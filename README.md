@@ -1,4 +1,6 @@
-# vuestragram
+# VUEstragram
+
+![Alt Text](./src/assets/Home.gif)
 
 ## Project setup
 ```
