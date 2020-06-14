@@ -1,4 +1,4 @@
-# VUEstragram
+# VUEstagram
 
 <p align="center">
   <img src="./src/assets/Home.gif" />
